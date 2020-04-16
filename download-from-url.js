@@ -1,9 +1,13 @@
-var file_url = 'http://www.africau.edu/images/default/sample.pdf';
-var file_name = file_url.substring(file_url.lastIndexOf('/') + 1);
+// Click button to download
+function downoadPDF() {
+  var file_url = 'http://www.africau.edu/images/default/sample.pdf';
+  download(file_url);
+}
 
-download(file_url, file_name);
+// Downlaod from URL function
+function download(url) {
+  var filename = url.substring(file_url.lastIndexOf('/') + 1);
 
-function download(url, filename) {
   fetch(url).then(function (t) {
     return t.blob().then((b) => {
       var a = document.createElement("a");
