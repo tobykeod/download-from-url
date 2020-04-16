@@ -6,7 +6,7 @@ function downoadPDF() {
 
 // Downlaod from URL function
 function download(url) {
-  var filename = url.substring(file_url.lastIndexOf('/') + 1);
+  var filename = url.substring(url.lastIndexOf('/') + 1);
 
   fetch(url).then(function (t) {
     return t.blob().then((b) => {
